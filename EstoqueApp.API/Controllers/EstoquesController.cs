@@ -1,12 +1,14 @@
 ﻿using EstoqueApp.Application.Interfaces.Services;
 using EstoqueApp.Application.Models.Commands;
 using EstoqueApp.Application.Models.Queries;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EstoqueApp.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class EstoquesController : ControllerBase
     {
         private readonly IEstoqueAppService? _estoqueAppService;
